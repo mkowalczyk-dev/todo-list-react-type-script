@@ -6,5 +6,5 @@ export const getExampleTasks = async () => {
         new Error(response.statusText);
     }
 
-    return await response.json();
+    return (await response.json()) as string[]; // tak sobie radzimy z promise, wykorzystując wcześniej zdefklarowany interfejs
 };

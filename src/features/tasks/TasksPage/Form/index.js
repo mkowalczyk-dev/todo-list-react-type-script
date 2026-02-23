@@ -1,8 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, FormEventHandler } from 'react';
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { FormField, StyledButton } from "./styled";
 import { addNewTask } from "../../tasksSlice";
+
+
 
 const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
@@ -11,7 +13,7 @@ const Form = () => {
 
     const dispatch = useDispatch();
 
-    const onFormSubmit = (event) => {
+    const onFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
 
         const trimmedNewTaskContent = newTaskContent.trim();
