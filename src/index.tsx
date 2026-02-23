@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App.js';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals.js';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from "react-redux";
 import { theme } from "./theme";
-import { GlobalStyle } from "./GlobalStyle";
+import { GlobalStyle } from "./GlobalStyle.js";
 import store from "./store.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!); // dodając wykrzyknik zapewniamy, że to nie jest null i typeScript już nie uważa tego za błąd
 root.render(
   <React.StrictMode>
     <Provider store={store}>

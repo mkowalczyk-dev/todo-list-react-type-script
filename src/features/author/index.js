@@ -1,6 +1,6 @@
-import Section from "../../common/Section/index.js";
-import Header from "../../common/Header/index.js";
-import Container from "../../common/Container/index.js";
+import Section from "../../common/Section/index.tsx";
+import Header from "../../common/Header/index.tsx";
+import Container from "../../common/Container/index.tsx";
 import { Image, ImageList } from "./styled.js";
 
 function AuthorPage() {

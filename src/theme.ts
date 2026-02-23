@@ -16,4 +16,4 @@ export const theme = {
     breakpoints: {
         mobile: 767,
     },
-};
+} as const; // teraz pod kolorami nie będzie string, tylko konkretna wartość
