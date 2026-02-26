@@ -21,7 +21,7 @@ function AuthorPage() {
               Cześć. Z wykształcenia jestem architektem po studiach 5-letnich, natomiast postanowiłem sprawdzić się w innej dziedzinie ✊.
               Moje motto życiowe to:
             </h3>
-            <h4 class="article__header article__header--boldItalic">"Po co gadać, jeśli wszystko wiadomo, a jeśli nic
+            <h4>"Po co gadać, jeśli wszystko wiadomo, a jeśli nic
               nie wiadomo, to po co gadać?"
             </h4>
             <p>W wolnym czasie lubię m.in. malować. Poniżej praca, którą aktualnie tworzę z anime "Demon Slayer"</p>

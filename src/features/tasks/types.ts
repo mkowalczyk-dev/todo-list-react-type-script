@@ -3,3 +3,9 @@ export interface Task {
     content: string;
     done: boolean;
 }
+export interface CounterState {
+    tasks: Task[];
+    hideDone: boolean;
+    loading: boolean;
+    id?: number;
+}

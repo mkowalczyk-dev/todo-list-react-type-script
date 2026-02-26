@@ -1,8 +1,8 @@
 {
-  "name": "todo-list-react",
+  "name": "todo-list-react-type-script",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mkowalczyk-dev.github.io/todo-list-react/",
+  "homepage": "https://mkowalczyk-dev.github.io/todo-list-react-type-script/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.0",
     "@testing-library/dom": "^10.4.1",

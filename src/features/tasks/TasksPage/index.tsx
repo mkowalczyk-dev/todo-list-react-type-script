@@ -11,9 +11,6 @@ import { useDispatch } from "react-redux";
 
 function TasksPage() {
 
-  const dispatch = useDispatch();
-console.log(dispatch(fetchExampleTasks()))
-
   return (
 
     <Container>

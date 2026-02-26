@@ -3,11 +3,11 @@ import { List, Content, Button, StyledNavLink } from "./styled";
 import { doneTask, removeTask, selectHideDone, selectTasksByQuery } from "../../tasksSlice";
 import { phrase } from "../../TaskPage/searchQueryParamName";
 import { useQueryParameter } from "../queryParameters";
-import { Task } from "../../types";
+import { Task, CounterState } from "../../types";
 
 const TaskList = () => {
     const query = useQueryParameter(phrase);
-    const tasks: Task[] = useSelector(state => selectTasksByQuery(state, query));
+    const tasks: Task[] = useSelector((state: { tasks: CounterState }) => selectTasksByQuery(state, query || ""));
     const hideDone: boolean = useSelector(selectHideDone);
 
     const dispatch = useDispatch();
