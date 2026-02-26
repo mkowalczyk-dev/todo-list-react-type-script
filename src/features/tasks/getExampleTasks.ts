@@ -1,10 +1,5 @@
-export const getExampleTasks = async () => {
+import axios from "axios";
 
-    const response = await fetch("/todo-list-react/exampleTasks.json");
-
-    if(!response.ok) {
-        new Error(response.statusText);
-    }
-
-    return (await response.json()) as string[]; // tak sobie radzimy z promise, wykorzystując wcześniej zdefklarowany interfejs
-};
+export const getExampleTasks = () => 
+    axios<string[]>("/todo-list-react/exampleTasks.json").then(response => response.data); 
+// getExampleTasks zwraca Promise, który jest tablicą znaków

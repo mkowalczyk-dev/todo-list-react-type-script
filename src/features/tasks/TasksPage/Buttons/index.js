@@ -6,7 +6,7 @@ import {
   selectAreTasksEmpty,
   selectIsEveryTaskDone,
   selectHideDone,
-} from "../../tasksSlice.js";
+} from "../../tasksSlice";
 import { Task } from "../../types";
 
 const Buttons = () => {
