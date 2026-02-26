@@ -3,11 +3,12 @@ import { List, Content, Button, StyledNavLink } from "./styled";
 import { doneTask, removeTask, selectHideDone, selectTasksByQuery } from "../../tasksSlice";
 import { phrase } from "../../TaskPage/searchQueryParamName";
 import { useQueryParameter } from "../queryParameters";
+import { Task } from "../../types";
 
 const TaskList = () => {
     const query = useQueryParameter(phrase);
-    const tasks = useSelector(state => selectTasksByQuery(state, query));
-    const hideDone = useSelector(selectHideDone);
+    const tasks: Task[] = useSelector(state => selectTasksByQuery(state, query));
+    const hideDone: boolean = useSelector(selectHideDone);
 
     const dispatch = useDispatch();
 
@@ -15,14 +16,15 @@ const TaskList = () => {
         <>
             {tasks.map(task => (
                 <>
-                    {task.content.trimmed !== "" && (
+                    {task.content.trimEnd() !== "" && (
                         <>
                             <List
                                 key={task.id}
                                 hidden={task.done && hideDone}
                             >
                                 <Button
-                                    doneTask
+                                    doneTask={task.done}
+                                    removeTask={false}
                                     onClick={() => dispatch(doneTask(task.id))}
                                 >
                                     {task.done ? "✓" : ""}
@@ -31,7 +33,8 @@ const TaskList = () => {
                                     <StyledNavLink to={`/zadania/${task.id}`}>{task.content}</StyledNavLink>
                                 </Content>
                                 <Button
-                                    removeTask
+                                    doneTask={false}
+                                    removeTask={true}
                                     onClick={() => dispatch(removeTask(task.id))}
                                 >🗑</Button>
                             </List>

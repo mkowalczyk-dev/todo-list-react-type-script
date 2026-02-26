@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App.js';
-import reportWebVitals from './reportWebVitals.js';
+import { App } from './App';
+import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from "react-redux";
 import { theme } from "./theme";
-import { GlobalStyle } from "./GlobalStyle.js";
-import store from "./store.js";
+import { GlobalStyle } from "./GlobalStyle";
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById('root')!); // dodając wykrzyknik zapewniamy, że to nie jest null i typeScript już nie uważa tego za błąd
 root.render(

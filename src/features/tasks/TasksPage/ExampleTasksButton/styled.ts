@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const SmallButton = styled.button`
+export const SmallButton = styled.button<{ done?: boolean }>`
     color: ${({ theme }) => theme.colors.teal};
     height: 50px;
     font-size: 20px;
@@ -28,7 +28,10 @@ export const SmallButton = styled.button`
     `}
 `
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
+export const ButtonLoading = styled.button`
+    color: ${({ theme }) => theme.colors.brightGrey};
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+    `

@@ -1,17 +1,18 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import Input from "../../Input"
+import Input from "../../Input";
 import { phrase } from "../../TaskPage/searchQueryParamName";
+import { ChangeEventHandler } from "react";
 
 export const Search = () => {
 
     const location = useLocation();
     const history = useNavigate();
     const query = (new URLSearchParams(location.search)).get(phrase);
-    
-    const onInputChange = ({target}) => {
+
+    const onInputChange: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const searchParams = new URLSearchParams(location.search);
 
-        if(target.value.trim() === "") {
+        if (target.value.trim() === "") {
             searchParams.delete(phrase);
         } else {
             searchParams.set(phrase, target.value);
@@ -21,10 +22,10 @@ export const Search = () => {
     };
 
     return (
-        <Input 
-        placeholder="Filtruj zadania"
-        value={query || ""}
-        onChange={onInputChange}
+        <Input
+            placeholder="Filtruj zadania"
+            value={query || ""}
+            onChange={onInputChange}
         />
     )
 };

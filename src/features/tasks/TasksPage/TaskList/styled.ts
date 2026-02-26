@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
+interface ButtonProps {
+    doneTask: boolean;
+    removeTask: boolean;
+}
 
-export const List = styled.li`
+export const List = styled.li < { hidden: boolean } > `
     margin: 0px 0;
     padding: 0px;
     list-style-type: none;
@@ -18,13 +22,13 @@ export const List = styled.li`
     `}
 `
 
-export const Content = styled.span`
+export const Content = styled.span<{ done: boolean }>`
     ${({ done }) => done && css`
         text-decoration: line-through;
     `}
 `
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
     background-color: ${({ theme }) => theme.colors.forestGreen};
     border: none;
     transition: transform 1s ease-in;
@@ -54,11 +58,8 @@ export const Button = styled.button`
     `}
 `
 
-const activeClassName = "active";
+export const StyledNavLink = styled(NavLink)`
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-    activeClassName,
-}))`
     color: ${({ theme }) => theme.colors.teal};
     text-decoration: none;
 
